@@ -1,0 +1,40 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: rgb(221, 208, 208);
+}
+.container1 {
+  background-color: rgb(255, 255, 255);
+  width: 70%;
+  border-radius: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 15%;
+  padding: 15px;
+  text-align: center;
+}
+a:link {
+  text-decoration: none;
+  color: maroon;
+}
+
+.container {
+  height: 320px;
+  width: 250px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 10px;
+  padding-bottom: 6px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0.2);
+  display: inline-block;
+  margin: 20px 16px 20px 20px;
+  transition: transform 0.3s;
+}
+
+.flag {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  transition: transform 1s;
+}
+.details {
+  padding: 0 0 5px 10px;
+}
