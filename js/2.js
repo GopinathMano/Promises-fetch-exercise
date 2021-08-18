@@ -1,10 +1,12 @@
 const regionEurope_spanish = fetch("https://restcountries.eu/rest/v2/lang/es")
   .then((data) => data.json())
+  .then((data) => data.filter((x) => x.region == "Europe"))
 
-  .then((countries) => countries.forEach((country) => createFlag(country)))
-  .catch((errMsg) => console.log("Data not found"));
+  .then((countries) => countries.forEach((country) => createFlag(country)));
 
-function createFlag({ name, flag, population, region, capital }) {
+// .catch((errMsg) => console.log("Data not found"));
+//
+function createFlag({ name, flag, population, region = "europe", capital }) {
   const info = document.createElement("div");
   info.setAttribute("class", "container");
 

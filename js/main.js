@@ -1,20 +1,19 @@
 const regionAsia = fetch("https://restcountries.eu/rest/v2/region/asia")
   .then((data) => data.json())
-  // .then((countries) => countries.forEach((country) => createFlag(country)))
+
   .catch((errMsg) => console.log("Data not found"));
 
-const regionEurope = fetch(
-  "https://restcountries.eu/rest/v2/region/europe/languages"
-)
+const regionEurope = fetch("https://restcountries.eu/rest/v2/region/europe")
   .then((data) => data.json())
-  .then((lang) => console.log(lang))
-  // .then((countries) => countries.forEach((country) => createFlag(country)))
+
   .catch((errMsg) => console.log("Data not found"));
 
 Promise.all([regionAsia, regionEurope])
   .then((merge) => merge[0].concat(merge[1]))
+  // .then((all) => console.log(all))
   .then((countries) => countries.forEach((country) => createFlag(country)))
   .catch((errMsg) => console.log("Data not found"));
+
 function createFlag({ name, flag, population, region, capital }) {
   const info = document.createElement("div");
   info.setAttribute("class", "container");
